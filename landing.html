@@ -3,76 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TrustedCars.ie | Under Construction</title>
+    <title>TrustedCars.ie</title>
+    <meta http-equiv="refresh" content="0; url=/index.html" />
     <style>
-      /* Reset and base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
       body {
+        margin: 0;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #f8fafc;
-        font-family: "Poppins", sans-serif;
+        display: grid;
+        place-items: center;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #0d1526;
+        color: #f8fbff;
+        text-align: center;
       }
 
-      .logo {
-        font-size: 2.5rem;
-        color: #007bff; /* Dark blue */
-        border: 3px solid #007bff; /* Blue border */
-        padding: 0.5em 1.5em;
-        border-radius: 8px;
-        letter-spacing: 1px;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 24px;
+        border-radius: 18px;
+        max-width: 420px;
+        box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
       }
 
-      h1 {
-        font-size: 1.8rem;
-        color: #0a3d91;
-        margin-bottom: 0.5rem;
-      }
-
-      p {
-        color: #555;
-        font-size: 1rem;
-      }
-
-      .spinner {
-        margin-top: 2rem;
-        width: 40px;
-        height: 40px;
-        border: 4px solid #d1e3ff;
-        border-top: 4px solid #007bff;
-        border-radius: 50%;
-        animation: spin 1.2s linear infinite;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      footer {
-        position: absolute;
-        bottom: 1rem;
-        font-size: 0.9rem;
-        color: #999;
+      a {
+        color: #7ecbff;
+        font-weight: 700;
       }
     </style>
   </head>
   <body>
-    <div class="logo">TrustedCars.ie</div>
-    <h1>We're Building Something Great!</h1>
-    <p>Our website is currently under construction and will be live soon.</p>
-    <div class="spinner"></div>
-
-    <footer>© 2025 TrustedCars.ie. All rights reserved.</footer>
+    <div class="card">
+      <div style="font-weight: 800; font-size: 1.2rem; margin-bottom: 10px">
+        Redirecting to TrustedCars.ie
+      </div>
+      <div>
+        If you are not redirected automatically,
+        <a href="/index.html">click here</a>.
+      </div>
+    </div>
   </body>
 </html>

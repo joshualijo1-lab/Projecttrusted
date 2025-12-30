@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TrustedCars.ie | Drive with Confidence</title>
+    <title>flatfindr | Discover and Host Remarkable Spaces</title>
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -14,20 +14,21 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --primary: #0d5ed8;
-        --primary-dark: #0a47a1;
-        --accent: #21c55d;
-        --dark: #0b1727;
-        --muted: #5f6b7a;
-        --surface: #0f1f33;
-        --border: #e3e8ef;
-        --bg: #f5f7fb;
-        --shadow: 0px 18px 60px rgba(23, 43, 77, 0.1);
+        --bg: #0b1220;
+        --card: #0f172a;
+        --card-soft: #111c33;
+        --text: #e8eefc;
+        --muted: #a7b6d9;
+        --primary: #6ee7b7;
+        --primary-dark: #34d399;
+        --accent: #93c5fd;
+        --border: rgba(255, 255, 255, 0.06);
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
       }
 
       * {
@@ -36,11 +37,13 @@
 
       body {
         margin: 0;
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background: var(--bg);
-        color: #0b1220;
-        line-height: 1.6;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 20% 20%, rgba(52, 211, 153, 0.08), transparent 25%),
+          radial-gradient(circle at 80% 10%, rgba(147, 197, 253, 0.1), transparent 20%),
+          radial-gradient(circle at 50% 80%, rgba(52, 211, 153, 0.08), transparent 30%),
+          var(--bg);
+        color: var(--text);
+        min-height: 100vh;
       }
 
       a {
@@ -52,57 +55,67 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        backdrop-filter: blur(12px);
-        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(16px);
+        background: rgba(11, 18, 32, 0.75);
         border-bottom: 1px solid var(--border);
       }
 
       .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px clamp(1.2rem, 3vw, 2.4rem);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 18px clamp(1.2rem, 3vw, 2.5rem);
-        max-width: 1180px;
-        margin: 0 auto;
+        gap: 16px;
       }
 
       .logo {
         display: flex;
         align-items: center;
         gap: 10px;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: var(--primary-dark);
+        font-weight: 800;
+        letter-spacing: -0.3px;
+        color: white;
       }
 
-      .logo-icon {
-        height: 34px;
-        width: 34px;
+      .logo-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #34d399, #22d3ee);
         display: grid;
         place-items: center;
-        background: linear-gradient(135deg, var(--primary), #1a75ff);
-        color: #fff;
-        border-radius: 12px;
-        font-weight: 800;
+        color: #0b1220;
+        font-weight: 900;
+        box-shadow: 0 12px 40px rgba(52, 211, 153, 0.3);
       }
 
-      .nav-links {
+      nav ul {
+        list-style: none;
         display: flex;
         gap: 18px;
-        align-items: center;
+        padding: 0;
+        margin: 0;
+        color: var(--muted);
+        font-weight: 600;
       }
 
-      .pill {
+      nav ul li a {
         padding: 10px 14px;
         border-radius: 12px;
-        font-weight: 600;
-        transition: transform 120ms ease, background 120ms ease, box-shadow 120ms;
-        color: var(--dark);
+        transition: background 120ms ease, color 120ms ease;
       }
 
-      .pill:hover {
-        background: rgba(13, 94, 216, 0.07);
-        transform: translateY(-1px);
+      nav ul li a:hover {
+        background: rgba(147, 197, 253, 0.12);
+        color: white;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
 
       .btn {
@@ -112,779 +125,758 @@
         padding: 12px 16px;
         border-radius: 12px;
         font-weight: 700;
-        border: 1px solid var(--primary);
-        color: white;
-        background: linear-gradient(135deg, var(--primary), #1a75ff);
-        box-shadow: 0 15px 30px rgba(13, 94, 216, 0.25);
-        transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(135deg, #34d399, #22d3ee);
+        color: #0b1220;
+        box-shadow: 0 15px 40px rgba(34, 211, 238, 0.3);
+        transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms;
       }
 
       .btn.secondary {
-        background: white;
-        color: var(--primary-dark);
-        border-color: #d7e2f5;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        border-color: rgba(255, 255, 255, 0.12);
         box-shadow: none;
       }
 
       .btn:hover {
         transform: translateY(-1px);
-        box-shadow: 0 18px 38px rgba(13, 94, 216, 0.3);
-      }
-
-      .btn.secondary:hover {
-        box-shadow: var(--shadow);
+        filter: brightness(1.05);
       }
 
       main {
-        max-width: 1180px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 3vw, 2.5rem) 3.5rem;
+        padding: clamp(1.5rem, 3vw, 2.6rem);
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 32px;
       }
 
       .hero {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        align-items: center;
         gap: 28px;
-        padding: clamp(1.5rem, 3vw, 2rem);
-        background: #0d1526;
-        color: #f8fbff;
+        padding: clamp(1.6rem, 3vw, 2.6rem);
+        background: linear-gradient(135deg, rgba(17, 24, 39, 0.85), rgba(17, 94, 89, 0.8));
         border-radius: 24px;
         position: relative;
         overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
       }
 
       .hero::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(
-            circle at 20% 20%,
-            rgba(13, 94, 216, 0.24),
-            transparent 32%
-          ),
-          radial-gradient(
-            circle at 70% 60%,
-            rgba(33, 197, 93, 0.2),
-            transparent 35%
-          );
+        background: radial-gradient(circle at 18% 24%, rgba(52, 211, 153, 0.15), transparent 30%),
+          radial-gradient(circle at 80% 60%, rgba(147, 197, 253, 0.18), transparent 30%);
         pointer-events: none;
       }
 
       .hero-copy {
         position: relative;
         z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         background: rgba(255, 255, 255, 0.08);
         padding: 8px 12px;
         border-radius: 999px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
+        font-weight: 700;
+        letter-spacing: 0.15px;
+        color: var(--muted);
+        width: fit-content;
       }
 
       h1 {
-        font-size: clamp(2rem, 4vw, 3rem);
-        margin: 12px 0;
-        letter-spacing: -0.5px;
+        margin: 0;
+        font-size: clamp(2.1rem, 4vw, 3.1rem);
+        letter-spacing: -0.8px;
       }
 
       .subhead {
-        color: #dbe4f3;
-        margin-bottom: 18px;
-        max-width: 520px;
+        color: var(--muted);
+        max-width: 620px;
+        line-height: 1.7;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        align-items: center;
+        margin-top: 10px;
       }
 
-      .metrics {
+      .pill-row {
         display: flex;
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      .metric {
-        background: rgba(255, 255, 255, 0.08);
-        padding: 14px 16px;
-        border-radius: 14px;
-      }
-
-      .metric strong {
-        font-size: 1.25rem;
-      }
-
-      .hero-visual {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-card {
-        background: white;
-        color: #0f172a;
-        padding: 18px;
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        max-width: 480px;
-      }
-
-      .hero-card img {
-        width: 100%;
-        border-radius: 12px;
-        object-fit: cover;
-        height: 240px;
-      }
-
-      .hero-card h3 {
-        margin: 12px 0 6px;
-      }
-
-      .tags {
-        display: flex;
-        gap: 8px;
+        gap: 10px;
         flex-wrap: wrap;
-        color: #3e4c61;
+        color: var(--muted);
         font-weight: 600;
       }
 
-      .tag {
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: #eef4ff;
+      .pill {
+        padding: 9px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .search-card {
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 18px;
+        backdrop-filter: blur(10px);
+      }
+
+      .search-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 10px 12px;
+      }
+
+      label {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      input,
+      select {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        font-weight: 700;
+      }
+
+      .listings-section {
+        display: grid;
+        gap: 16px;
       }
 
       .section-header {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        gap: 12px;
-      }
-
-      .section-header h2 {
-        margin: 0;
-        letter-spacing: -0.4px;
-      }
-
-      .filters {
-        display: flex;
-        gap: 10px;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 10px;
       }
 
-      .input {
-        border: 1px solid var(--border);
-        padding: 12px 14px;
+      .section-title {
+        margin: 0;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
         border-radius: 12px;
-        background: white;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--muted);
         font-weight: 600;
-        min-width: 150px;
+        cursor: pointer;
       }
 
-      .card-grid {
+      .listing-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 18px;
-        margin-top: 18px;
+        gap: 16px;
       }
 
       .card {
-        background: white;
+        background: var(--card);
+        border: 1px solid var(--border);
         border-radius: 18px;
         overflow: hidden;
-        border: 1px solid #e6edf7;
-        box-shadow: 0 12px 35px rgba(12, 25, 44, 0.05);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
         display: flex;
         flex-direction: column;
+        min-height: 100%;
       }
 
-      .card img {
+      .card-media {
+        position: relative;
+        padding-top: 62%;
+        background: #1f2937;
+        overflow: hidden;
+      }
+
+      .card-media img {
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: 180px;
+        height: 100%;
         object-fit: cover;
+        transition: transform 220ms ease;
       }
 
-      .card-content {
-        padding: 14px 16px 16px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-
-      .price {
-        font-weight: 800;
-        font-size: 1.1rem;
-        color: var(--primary-dark);
-      }
-
-      .list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 16px;
-        margin-top: 18px;
-      }
-
-      .pill-card {
-        background: white;
-        padding: 16px;
-        border-radius: 14px;
-        border: 1px solid #e6edf7;
-        box-shadow: 0 8px 28px rgba(12, 25, 44, 0.06);
-      }
-
-      .cta-panel {
-        background: linear-gradient(135deg, #0d5ed8, #0a47a1);
-        color: white;
-        padding: clamp(1.5rem, 4vw, 2.5rem);
-        border-radius: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 18px;
-        align-items: center;
-        box-shadow: 0 20px 60px rgba(13, 94, 216, 0.3);
-      }
-
-      .cta-panel h3 {
-        margin: 0 0 10px;
-      }
-
-      .input-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 10px;
-      }
-
-      form {
-        background: white;
-        padding: 18px;
-        border-radius: 16px;
-        border: 1px solid #e6edf7;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 12px;
-      }
-
-      label {
-        font-weight: 600;
-        color: #14233b;
-      }
-
-      input,
-      select,
-      textarea {
-        width: 100%;
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        font-size: 1rem;
-        font-family: inherit;
-        background: #f9fbff;
-      }
-
-      textarea {
-        min-height: 110px;
-        resize: vertical;
-      }
-
-      .status {
-        font-weight: 700;
-        color: var(--accent);
-      }
-
-      .badge-row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
+      .card:hover .card-media img {
+        transform: scale(1.05);
       }
 
       .badge {
-        background: #eef2ff;
-        color: #1f2a44;
-        padding: 8px 12px;
-        border-radius: 12px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(11, 18, 32, 0.7);
+        padding: 7px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .card-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .card-title {
+        font-weight: 800;
+        margin: 0;
+        letter-spacing: -0.3px;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill-list span {
+        padding: 8px 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+      }
+
+      .price {
+        font-size: 1.1rem;
+        font-weight: 800;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .feature-card {
+        background: var(--card-soft);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .feature-card h3 {
+        margin: 0;
+      }
+
+      .cta {
+        background: linear-gradient(120deg, #0f172a, #0b1021);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .cta small {
+        color: var(--muted);
         font-weight: 700;
       }
 
       footer {
-        max-width: 1180px;
-        margin: 0 auto;
-        padding: 0 clamp(1.2rem, 3vw, 2.5rem) 2rem;
-        display: grid;
-        gap: 10px;
-        color: #3b4b61;
-      }
-
-      .small {
+        border-top: 1px solid var(--border);
+        padding: 22px clamp(1.2rem, 3vw, 2.6rem);
         color: var(--muted);
+        text-align: center;
+        background: #0a0f1a;
       }
 
-      @media (max-width: 720px) {
-        .nav-links {
-          display: none;
-        }
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(52, 211, 153, 0.15);
+        color: var(--primary);
+        font-weight: 700;
+        border: 1px solid rgba(52, 211, 153, 0.25);
+      }
 
-        .hero {
-          padding: 18px;
-        }
-
-        .metrics {
-          flex-direction: column;
+      @media (max-width: 880px) {
+        .cta {
+          grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav class="nav">
+      <div class="nav">
         <div class="logo">
-          <span class="logo-icon">TC</span>
-          TrustedCars.ie
+          <div class="logo-mark">ff</div>
+          flatfindr
         </div>
-        <div class="nav-links">
-          <a class="pill" href="#inventory">Inventory</a>
-          <a class="pill" href="#sell">Sell</a>
-          <a class="pill" href="#finance">Finance</a>
-          <a class="pill" href="#reviews">Reviews</a>
-          <a class="btn secondary" href="#contact">Book a call</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#search">Find stays</a></li>
+            <li><a href="#host">Host console</a></li>
+            <li><a href="#safety">Safety</a></li>
+            <li><a href="#cta">Pricing</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn secondary" id="auth-btn">Sign in</button>
+          <button class="btn" id="list-btn">List your space</button>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="eyebrow">
-            <span>Trusted nationwide • Premium used & new</span>
-          </div>
-          <h1>Drive home happy with Ireland’s most trusted marketplace.</h1>
+          <div class="eyebrow">Book bold, inspiring spaces</div>
+          <h1 id="hero-title">Find extraordinary flats, lofts, and venues worldwide.</h1>
           <p class="subhead">
-            Browse verified vehicles, arrange financing in minutes, and book a
-            test drive anywhere in Ireland—powered by secure Firebase
-            infrastructure.
+            flatfindr is a modern marketplace for teams, creators, and travelers. Discover curated spaces, manage your bookings, and onboard hosts with enterprise-grade safety backed by Firebase authentication.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#inventory">Browse inventory</a>
-            <a class="btn secondary" href="#contact">Talk to an advisor</a>
+            <button class="btn" id="hero-search">Start searching</button>
+            <button class="btn secondary" id="hero-host">I want to host</button>
           </div>
-          <div class="metrics">
-            <div class="metric">
-              <strong>4,800+</strong>
-              <div>Vehicles sold in 2024</div>
-            </div>
-            <div class="metric">
-              <strong>4.9 ★</strong>
-              <div>Customer satisfaction</div>
-            </div>
-            <div class="metric">
-              <strong>24h</strong>
-              <div>Average finance approval</div>
-            </div>
+          <div class="pill-row">
+            <span class="pill">Verified hosts</span>
+            <span class="pill">Instant payouts</span>
+            <span class="pill">Real-time availability</span>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <img
-              src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
-              alt="Premium vehicle"
-            />
-            <h3>Audi e-tron Sportback</h3>
-            <div class="tags">
-              <span class="tag">2023</span>
-              <span class="tag">Electric</span>
-              <span class="tag">Quattro</span>
-              <span class="tag">Warranty Included</span>
+        <div class="search-card" id="search">
+          <h3 style="margin: 0">Search curated stays</h3>
+          <div class="search-grid">
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" placeholder="e.g. Barcelona, Soho" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="inventory">
-        <div class="section-header">
-          <h2>Featured inventory</h2>
-          <div class="filters">
-            <input
-              class="input"
-              id="searchInput"
-              type="search"
-              placeholder="Search make or model"
-            />
-            <select class="input" id="typeFilter">
-              <option value="">All types</option>
-              <option value="SUV">SUV</option>
-              <option value="Sedan">Sedan</option>
-              <option value="Hatchback">Hatchback</option>
-              <option value="EV">EV</option>
-            </select>
-            <select class="input" id="priceFilter">
-              <option value="">Any price</option>
-              <option value="30000">Up to €30k</option>
-              <option value="50000">Up to €50k</option>
-              <option value="80000">Up to €80k</option>
-            </select>
-          </div>
-        </div>
-        <div class="card-grid" id="inventoryGrid"></div>
-      </section>
-
-      <section id="sell">
-        <div class="section-header">
-          <h2>Sell or trade-in with zero hassle</h2>
-          <div class="badge-row">
-            <span class="badge">Instant online valuations</span>
-            <span class="badge">Same-day payments</span>
-            <span class="badge">Nationwide collection</span>
-          </div>
-        </div>
-        <div class="list">
-          <div class="pill-card">
-            <strong>1. Tell us about your car</strong>
-            <div>Reg, mileage, and a few photos via secure upload.</div>
-          </div>
-          <div class="pill-card">
-            <strong>2. Get a live offer</strong>
-            <div>We use market data plus our verified dealer network.</div>
-          </div>
-          <div class="pill-card">
-            <strong>3. Paid on collection</strong>
-            <div>Our drivers pay you on pickup or bank transfer.</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="finance">
-        <div class="cta-panel">
-          <div>
-            <h3>Finance approvals in as little as 24 hours.</h3>
-            <p>
-              Soft credit checks, transparent APR, and tailored plans for PCP or
-              HP. Your details are processed securely with Firebase.
-            </p>
-          </div>
-          <div class="input-grid">
-            <div>
-              <label for="financeBudget">Monthly budget</label>
-              <input
-                id="financeBudget"
-                name="financeBudget"
-                type="text"
-                placeholder="e.g. €450"
-              />
-            </div>
-            <div>
-              <label for="financeDeposit">Deposit</label>
-              <input
-                id="financeDeposit"
-                name="financeDeposit"
-                type="text"
-                placeholder="e.g. €6,000"
-              />
-            </div>
-            <div>
-              <label for="financeTerm">Term</label>
-              <select id="financeTerm" name="financeTerm">
-                <option value="36">36 months</option>
-                <option value="48">48 months</option>
-                <option value="60">60 months</option>
+            <div class="field">
+              <label for="space">Space type</label>
+              <select id="space">
+                <option value="">Any</option>
+                <option value="loft">Loft</option>
+                <option value="flat">Flat</option>
+                <option value="villa">Villa</option>
+                <option value="studio">Studio</option>
+                <option value="workspace">Workspace</option>
+                <option value="event">Event space</option>
               </select>
             </div>
-            <button class="btn" id="financeSave">Save preferences</button>
-          </div>
-          <div id="financeStatus" class="status"></div>
-        </div>
-      </section>
-
-      <section id="reviews">
-        <div class="section-header">
-          <h2>Loved by Irish drivers</h2>
-          <div class="badge-row">
-            <span class="badge">AA partner inspections</span>
-            <span class="badge">Free 12-month warranty</span>
-            <span class="badge">Nationwide delivery</span>
-          </div>
-        </div>
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-content">
-              <p>
-                “Booked a test drive in minutes and had finance approved the
-                next day. Delivery to Cork was seamless.”
-              </p>
-              <strong>- Maeve O.</strong>
-              <div class="muted">VW ID.4 Owner</div>
+            <div class="field">
+              <label for="budget">Budget</label>
+              <select id="budget">
+                <option value="">Any</option>
+                <option value="200">Under $200</option>
+                <option value="400">Under $400</option>
+                <option value="800">Under $800</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="instant">Instant book</label>
+              <select id="instant">
+                <option value="">Flexible</option>
+                <option value="true">Instant only</option>
+              </select>
             </div>
           </div>
-          <div class="card">
-            <div class="card-content">
-              <p>
-                “They handled paperwork, warranty, and even synced my Apple Car
-                Play. Fantastic experience.”
-              </p>
-              <strong>- Darragh L.</strong>
-              <div class="muted">BMW 330e Owner</div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <p>
-                “The trade-in offer was higher than other dealers and payment
-                landed on collection. Recommend highly.”
-              </p>
-              <strong>- Aisling K.</strong>
-              <div class="muted">Audi Q3 Seller</div>
-            </div>
+          <div class="hero-actions" style="margin-top: 16px">
+            <button class="btn" id="search-btn">Show matching stays</button>
+            <div class="status-pill" id="firebase-status">Connecting to Firebase…</div>
           </div>
         </div>
       </section>
 
-      <section id="contact">
+      <section class="listings-section" aria-labelledby="listings-title">
         <div class="section-header">
-          <h2>Book a call or test drive</h2>
-          <p class="small">
-            Your inquiry is stored securely via Firebase Firestore. Replace the
-            config with your own project credentials to enable live saves.
+          <h2 class="section-title" id="listings-title">Featured stays for teams & creators</h2>
+          <label class="toggle">
+            <input type="checkbox" id="filter-premium" /> Premium only
+          </label>
+        </div>
+        <div class="listing-grid" id="listing-grid"></div>
+      </section>
+
+      <section class="features-grid" id="safety" aria-labelledby="feature-title">
+        <h2 class="section-title" id="feature-title">Built like Airbnb with enterprise safety</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Firebase-first identity</h3>
+            <p>
+              Secure sign-in with Firebase Authentication (email, SSO, or magic links). Session management is ready for production and keeps hosts and guests trusted.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Live availability</h3>
+            <p>
+              Realtime updates from Firestore collections keep calendars fresh across mobile and web. Edge caching ensures millisecond responses worldwide.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Payments & verification</h3>
+            <p>
+              Stripe + verified payouts plus ID checks, licenses, and insurance badges displayed on every listing so guests book with confidence.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Host control center</h3>
+            <p>
+              Manage listings, sync calendars, and respond to inquiries from one modern dashboard. AI-generated descriptions and photo grading help hosts stand out.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="host" aria-labelledby="cta-title">
+        <div>
+          <small>Host console</small>
+          <h2 id="cta-title">List your space in minutes</h2>
+          <p style="color: var(--muted); max-width: 520px">
+            Upload photos, set rules, and publish directly to Firestore-backed collections. We auto-generate a landing card, provide pricing guidance, and monitor safety flags.
           </p>
-        </div>
-        <form id="leadForm">
-          <div class="input-grid">
-            <div>
-              <label for="name">Full name</label>
-              <input id="name" name="name" required placeholder="Jane Murphy" />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@example.com"
-              />
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input
-                id="phone"
-                name="phone"
-                required
-                placeholder="+353 87 123 4567"
-              />
-            </div>
-            <div>
-              <label for="vehicle">Vehicle of interest</label>
-              <input
-                id="vehicle"
-                name="vehicle"
-                placeholder="e.g. Tesla Model Y"
-              />
-            </div>
+          <div class="pill-row">
+            <span class="pill">Photo uploader</span>
+            <span class="pill">Calendar sync</span>
+            <span class="pill">Guest screening</span>
+            <span class="pill">Analytics</span>
           </div>
-          <label for="message">How can we help?</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Preferred dates, trade-in details, questions..."
-          ></textarea>
-          <button class="btn" type="submit">Submit inquiry</button>
-          <div id="formStatus" class="status"></div>
-        </form>
+        </div>
+        <div class="feature-card" style="height: 100%">
+          <h3>Host checklist</h3>
+          <ul style="margin: 0; padding-left: 20px; color: var(--muted); line-height: 1.8">
+            <li>Connect your Firebase project and Storage bucket</li>
+            <li>Enable Authentication providers and Firestore rules</li>
+            <li>Publish your first listing with images and amenities</li>
+            <li>Go live with instant book or manual approval</li>
+          </ul>
+          <button class="btn" style="margin-top: 12px">Open host console</button>
+        </div>
       </section>
     </main>
 
     <footer>
-      <div><strong>TrustedCars.ie</strong> — Drive happy, drive trusted.</div>
-      <div class="small">
-        Replace the Firebase config in this page with your own credentials
-        before going live. Ensure proper Firestore security rules for
-        production.
-      </div>
-      <div class="small">© 2025 TrustedCars.ie. All rights reserved.</div>
+      Built for modern travel by flatfindr. Secure, realtime, and ready for your guests.
     </footer>
 
     <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
       import {
-        initializeApp,
-        getApps,
-        getApp,
-      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-      import {
-        getAnalytics,
-      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+        getAuth,
+        signInAnonymously,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
       import {
         getFirestore,
         collection,
-        addDoc,
-      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
       const firebaseConfig = {
         apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_DOMAIN.firebaseapp.com",
+        authDomain: "YOUR_AUTH_DOMAIN",
         projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_BUCKET.appspot.com",
+        storageBucket: "YOUR_STORAGE_BUCKET",
         messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
         appId: "YOUR_APP_ID",
-        measurementId: "YOUR_MEASUREMENT_ID",
       };
 
-      const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-      let analytics;
-      try {
-        analytics = getAnalytics(app);
-      } catch (err) {
-        console.warn("Analytics unavailable in this context.", err);
-      }
-      const db = getFirestore(app);
+      const statusEl = document.getElementById("firebase-status");
+      const authBtn = document.getElementById("auth-btn");
+      const listBtn = document.getElementById("list-btn");
+      const heroSearch = document.getElementById("hero-search");
+      const heroHost = document.getElementById("hero-host");
+      const filterPremium = document.getElementById("filter-premium");
+      const instantSelect = document.getElementById("instant");
+      const budgetSelect = document.getElementById("budget");
+      const spaceSelect = document.getElementById("space");
+      const locationInput = document.getElementById("location");
+      const searchBtn = document.getElementById("search-btn");
+      const listingGrid = document.getElementById("listing-grid");
 
-      const inventory = [
+      const sampleListings = [
         {
-          title: "Tesla Model Y Long Range",
-          price: "€64,900",
-          type: "EV",
-          year: 2024,
-          range: "497 km WLTP",
-          img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80",
+          title: "Soho Creator Loft",
+          city: "New York, USA",
+          price: 420,
+          type: "loft",
+          instant: true,
+          premium: true,
+          rating: 4.9,
+          badge: "Instant book",
+          amenities: ["Rooftop", "Studio lights", "Fast Wi‑Fi"],
+          image:
+            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
         },
         {
-          title: "Audi Q5 S line Quattro",
-          price: "€53,400",
-          type: "SUV",
-          year: 2022,
-          range: "2.0 TDI • AWD",
-          img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+          title: "Gothenburg Harbor Flat",
+          city: "Sweden",
+          price: 240,
+          type: "flat",
+          instant: false,
+          premium: false,
+          rating: 4.8,
+          badge: "Waterfront",
+          amenities: ["Harbor view", "Floor heating", "Keyless"],
+          image:
+            "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
         },
         {
-          title: "BMW 330e M Sport",
-          price: "€45,900",
-          type: "Sedan",
-          year: 2021,
-          range: "Plug-in Hybrid",
-          img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+          title: "Lisbon Azul Terrace",
+          city: "Lisbon, Portugal",
+          price: 180,
+          type: "flat",
+          instant: true,
+          premium: false,
+          rating: 4.7,
+          badge: "Terrace",
+          amenities: ["City views", "Coffee bar", "Workspace"],
+          image:
+            "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80",
         },
         {
-          title: "Volkswagen ID.4 Pro",
-          price: "€42,300",
-          type: "EV",
-          year: 2023,
-          range: "520 km WLTP",
-          img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+          title: "Echo Beach Villa",
+          city: "Canggu, Bali",
+          price: 650,
+          type: "villa",
+          instant: true,
+          premium: true,
+          rating: 5,
+          badge: "Private pool",
+          amenities: ["Chef kitchen", "Cinema room", "Generator"],
+          image:
+            "https://images.unsplash.com/photo-1505692069463-5e3405e3e7ee?auto=format&fit=crop&w=1200&q=80",
         },
         {
-          title: "Kia Sportage GT-Line",
-          price: "€36,800",
-          type: "SUV",
-          year: 2022,
-          range: "1.6 T-GDi",
-          img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+          title: "Berlin Factory Studio",
+          city: "Berlin, Germany",
+          price: 320,
+          type: "workspace",
+          instant: false,
+          premium: false,
+          rating: 4.6,
+          badge: "Creator ready",
+          amenities: ["Cyclorama", "Sonos", "Blackout"],
+          image:
+            "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80",
         },
         {
-          title: "Mercedes-Benz A200 AMG",
-          price: "€34,200",
-          type: "Hatchback",
-          year: 2021,
-          range: "Progressive Line",
-          img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
+          title: "Barcelona Event Atrium",
+          city: "Barcelona, Spain",
+          price: 520,
+          type: "event",
+          instant: true,
+          premium: true,
+          rating: 4.9,
+          badge: "Event ready",
+          amenities: ["200 guests", "Catering", "AV suite"],
+          image:
+            "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
         },
       ];
 
-      const inventoryGrid = document.getElementById("inventoryGrid");
-      const searchInput = document.getElementById("searchInput");
-      const typeFilter = document.getElementById("typeFilter");
-      const priceFilter = document.getElementById("priceFilter");
+      const hasFirebaseConfig = () =>
+        Object.values(firebaseConfig).every(
+          (value) => value && !String(value).includes("YOUR_")
+        );
 
-      function renderInventory(items) {
-        inventoryGrid.innerHTML = "";
-        items.forEach((item) => {
+      const renderListings = (data) => {
+        listingGrid.innerHTML = "";
+        data.forEach((listing) => {
           const card = document.createElement("article");
           card.className = "card";
           card.innerHTML = `
-            <img src="${item.img}" alt="${item.title}" />
-            <div class="card-content">
-              <div class="price">${item.price}</div>
-              <strong>${item.title}</strong>
-              <div class="muted">${item.year} • ${item.range}</div>
-              <div class="tags">
-                <span class="tag">${item.type}</span>
-                <span class="tag">Verified</span>
+            <div class="card-media">
+              <span class="badge">${listing.badge || "Featured"}</span>
+              <img src="${listing.image}" alt="${listing.title}" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <div class="pill">${listing.city}</div>
+                <div>★ ${listing.rating.toFixed(1)}</div>
+              </div>
+              <h3 class="card-title">${listing.title}</h3>
+              <div class="pill-list">
+                ${listing.amenities
+                  .map((a) => `<span>${a}</span>`)
+                  .join("")}
+              </div>
+              <div class="price-row">
+                <div class="price">$${listing.price} / night</div>
+                <button class="btn secondary" style="padding: 10px 12px">Book</button>
               </div>
             </div>
           `;
-          inventoryGrid.appendChild(card);
+          listingGrid.appendChild(card);
         });
-      }
+      };
 
-      function filterInventory() {
-        const term = searchInput.value.toLowerCase();
-        const type = typeFilter.value;
-        const priceCap = priceFilter.value ? Number(priceFilter.value) : null;
-        const filtered = inventory.filter((item) => {
-          const matchesTerm = item.title.toLowerCase().includes(term);
-          const matchesType = type ? item.type === type : true;
-          const numericPrice = Number(item.price.replace(/[^0-9]/g, ""));
-          const matchesPrice = priceCap ? numericPrice <= priceCap : true;
-          return matchesTerm && matchesType && matchesPrice;
+      const applyFilters = (source) => {
+        const query = locationInput.value.trim().toLowerCase();
+        const type = spaceSelect.value;
+        const budget = Number(budgetSelect.value || 0);
+        const instant = instantSelect.value === "true";
+        const premiumOnly = filterPremium.checked;
+
+        const filtered = source.filter((listing) => {
+          const matchesQuery = query
+            ? listing.city.toLowerCase().includes(query) ||
+              listing.title.toLowerCase().includes(query)
+            : true;
+          const matchesType = type ? listing.type === type : true;
+          const matchesBudget = budget ? listing.price <= budget : true;
+          const matchesInstant = instant ? listing.instant : true;
+          const matchesPremium = premiumOnly ? listing.premium : true;
+          return (
+            matchesQuery &&
+            matchesType &&
+            matchesBudget &&
+            matchesInstant &&
+            matchesPremium
+          );
         });
-        renderInventory(filtered);
-      }
 
-      searchInput.addEventListener("input", filterInventory);
-      typeFilter.addEventListener("change", filterInventory);
-      priceFilter.addEventListener("change", filterInventory);
-      renderInventory(inventory);
+        renderListings(filtered);
+      };
 
-      const leadForm = document.getElementById("leadForm");
-      const formStatus = document.getElementById("formStatus");
+      const updateStatus = (text, isReady = false) => {
+        statusEl.textContent = text;
+        statusEl.style.background = isReady
+          ? "rgba(52, 211, 153, 0.15)"
+          : "rgba(255, 255, 255, 0.05)";
+        statusEl.style.color = isReady ? "var(--primary)" : "var(--muted)";
+      };
 
-      leadForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        formStatus.textContent = "Saving your request...";
-        const data = Object.fromEntries(new FormData(leadForm).entries());
-        try {
-          await addDoc(collection(db, "inquiries"), {
-            ...data,
-            createdAt: new Date().toISOString(),
-          });
-          formStatus.textContent =
-            "Thank you! Your request has been received. We’ll call you shortly.";
-          leadForm.reset();
-        } catch (err) {
-          console.error("Failed to save inquiry", err);
-          formStatus.textContent =
-            "We could not save your request. Please check your Firebase config.";
+      const wireUIShortcuts = () => {
+        const focusSearch = () => locationInput.focus();
+        heroSearch.addEventListener("click", focusSearch);
+        searchBtn.addEventListener("click", () => applyFilters(listings));
+        [locationInput, spaceSelect, budgetSelect, instantSelect, filterPremium].forEach(
+          (el) => el.addEventListener("change", () => applyFilters(listings))
+        );
+        heroHost.addEventListener("click", () => alert("Open host onboarding"));
+        listBtn.addEventListener("click", () => alert("Host console coming soon"));
+      };
+
+      let listings = [...sampleListings];
+
+      const fetchListingsFromFirestore = async (db) => {
+        const listingRef = collection(db, "listings");
+        const snapshot = await getDocs(listingRef);
+        const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        if (docs.length) {
+          listings = docs.map((doc) => ({
+            title: doc.title || "Untitled space",
+            city: doc.city || "Unknown",
+            price: doc.price || 0,
+            type: doc.type || "flat",
+            instant: Boolean(doc.instant),
+            premium: Boolean(doc.premium),
+            rating: doc.rating || 4.8,
+            badge: doc.badge || "Verified host",
+            amenities: doc.amenities || ["Wi‑Fi", "Workspace"],
+            image:
+              doc.image ||
+              "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80",
+          }));
         }
-      });
+      };
 
-      const financeSave = document.getElementById("financeSave");
-      const financeStatus = document.getElementById("financeStatus");
-      financeSave.addEventListener("click", async () => {
-        const payload = {
-          budget: document.getElementById("financeBudget").value,
-          deposit: document.getElementById("financeDeposit").value,
-          term: document.getElementById("financeTerm").value,
-        };
-        financeStatus.textContent = "Saving finance preferences...";
-        try {
-          await addDoc(collection(db, "financePreferences"), {
-            ...payload,
-            createdAt: new Date().toISOString(),
-          });
-          financeStatus.textContent =
-            "Preferences saved securely. An advisor will share tailored offers.";
-        } catch (err) {
-          console.error("Failed to save finance preferences", err);
-          financeStatus.textContent =
-            "Unable to save. Check your Firebase credentials and Firestore rules.";
+      const initializeFirebase = async () => {
+        if (!hasFirebaseConfig()) {
+          updateStatus("Demo mode: using sample listings");
+          renderListings(listings);
+          return;
         }
-      });
+
+        try {
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth(app);
+          const db = getFirestore(app);
+          updateStatus("Connected to Firebase", true);
+
+          await signInAnonymously(auth);
+          onAuthStateChanged(auth, (user) => {
+            if (user) {
+              authBtn.textContent = "Sign out";
+            }
+          });
+
+          await fetchListingsFromFirestore(db);
+          renderListings(listings);
+        } catch (error) {
+          console.error("Firebase error", error);
+          updateStatus("Demo mode: using sample listings");
+          renderListings(listings);
+        }
+      };
+
+      const init = async () => {
+        wireUIShortcuts();
+        await initializeFirebase();
+        applyFilters(listings);
+      };
+
+      init();
     </script>
   </body>
 </html>

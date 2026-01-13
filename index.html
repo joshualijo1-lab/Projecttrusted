@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projecttrusted | Buy & Sell Cars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="nav">
+          <div class="logo">
+            <span class="logo-mark">PT</span>
+            <span class="logo-text">Projecttrusted</span>
+          </div>
+          <div class="nav-links">
+            <a href="#marketplace">Marketplace</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#dealers">Dealers</a>
+            <a href="#financing">Financing</a>
+          </div>
+          <button class="btn ghost" type="button">Sign in</button>
+        </nav>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="tag">Trusted marketplace for individuals & dealers</span>
+            <h1>Buy and sell cars with confidence.</h1>
+            <p>
+              A modern platform built for private sellers and dealership inventory, complete with instant
+              valuations, verified listings, and flexible financing tools.
+            </p>
+            <div class="hero-actions">
+              <button class="btn primary" type="button">List your car</button>
+              <button class="btn secondary" type="button">Browse inventory</button>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <strong>58k+</strong>
+                <span>active listings</span>
+              </div>
+              <div>
+                <strong>1.4k</strong>
+                <span>dealer partners</span>
+              </div>
+              <div>
+                <strong>4.9★</strong>
+                <span>avg. rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="card-header">
+              <h3>Live price insights</h3>
+              <p>Stay ahead with market data.</p>
+            </div>
+            <div class="price-gauge">
+              <span>Estimated value</span>
+              <strong id="valueGauge">$28,400</strong>
+            </div>
+            <ul class="card-list">
+              <li>Instant VIN lookup</li>
+              <li>Vehicle history reports</li>
+              <li>Smart dealer matching</li>
+            </ul>
+            <button class="btn primary full" type="button">Get instant offer</button>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section class="section" id="marketplace">
+          <div class="section-heading">
+            <h2>Explore the marketplace</h2>
+            <p>Find the right car or the right buyer in minutes.</p>
+          </div>
+          <div class="market-grid">
+            <article class="market-card">
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Verified</span>
+              </div>
+              <h3>2021 Tesla Model 3</h3>
+              <p>Low mileage, full history, home charging included.</p>
+              <div class="price">$33,950</div>
+            </article>
+            <article class="market-card">
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">Certified</span>
+              </div>
+              <h3>2022 BMW X5</h3>
+              <p>Premium packages, warranty, dealer maintained.</p>
+              <div class="price">$51,600</div>
+            </article>
+            <article class="market-card">
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">New price drop</span>
+              </div>
+              <h3>2020 Toyota RAV4</h3>
+              <p>Family-ready SUV with a spotless service record.</p>
+              <div class="price">$27,850</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section steps" id="how-it-works">
+          <div class="section-heading">
+            <h2>How it works</h2>
+            <p>Secure and seamless for sellers and buyers alike.</p>
+          </div>
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <h3>Create your listing</h3>
+              <p>Upload photos, VIN details, and availability in minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <h3>Get verified</h3>
+              <p>We run background checks and vehicle history reports.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <h3>Close the deal</h3>
+              <p>Use secure payments, title transfers, and delivery options.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section dealer" id="dealers">
+          <div class="dealer-content">
+            <h2>Tools for dealership growth</h2>
+            <p>
+              Integrations, lead routing, and dynamic pricing dashboards built for multi-lot inventory and
+              sales teams.
+            </p>
+            <ul>
+              <li>Sync inventory across platforms</li>
+              <li>AI-driven lead prioritization</li>
+              <li>Custom dealer storefronts</li>
+            </ul>
+            <button class="btn secondary" type="button">Schedule a demo</button>
+          </div>
+          <div class="dealer-panel">
+            <h3>Dealer command center</h3>
+            <div class="panel-row">
+              <div>
+                <span class="panel-label">Leads today</span>
+                <strong id="leadCount">128</strong>
+              </div>
+              <div>
+                <span class="panel-label">Response rate</span>
+                <strong>92%</strong>
+              </div>
+            </div>
+            <div class="panel-graph">
+              <span>Demand trending up</span>
+              <div class="graph-bars">
+                <div style="height: 48%"></div>
+                <div style="height: 62%"></div>
+                <div style="height: 75%"></div>
+                <div style="height: 54%"></div>
+                <div style="height: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section financing" id="financing">
+          <div class="section-heading">
+            <h2>Financing built for everyone</h2>
+            <p>Instant approvals, transparent terms, and flexible monthly payments.</p>
+          </div>
+          <div class="financing-grid">
+            <div class="finance-card">
+              <h3>Check your rate</h3>
+              <p>Soft credit check with no impact to your score.</p>
+              <button class="btn ghost" type="button">Start pre-approval</button>
+            </div>
+            <div class="finance-card">
+              <h3>Dealer-ready offers</h3>
+              <p>Bring a ready-to-go offer to the dealership or seller.</p>
+              <button class="btn ghost" type="button">Generate offer</button>
+            </div>
+            <div class="finance-card">
+              <h3>Trade-in value</h3>
+              <p>Swap your current car and apply the credit instantly.</p>
+              <button class="btn ghost" type="button">Get trade-in</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>Projecttrusted</strong>
+          <p>Modern car commerce for individuals and dealers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#marketplace">Marketplace</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#dealers">Dealer tools</a>
+          <a href="#financing">Financing</a>
+        </div>
+        <button class="btn primary" type="button">Get started</button>
+      </footer>
+    </div>
+  </body>
+</html>

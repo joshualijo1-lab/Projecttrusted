@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browse inventory | trustedcars.ie</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header compact">
+        <nav class="nav">
+          <a class="logo" href="index.html">
+            <span class="logo-mark">TC</span>
+            <span class="logo-text">trustedcars.ie</span>
+          </a>
+          <div class="nav-links">
+            <a href="browse.html">Browse inventory</a>
+            <a href="list.html">List your car</a>
+            <a href="index.html#dealers">Dealers</a>
+            <a href="index.html#financing">Financing</a>
+          </div>
+          <button class="btn ghost" type="button">Sign in</button>
+        </nav>
+        <div class="page-hero">
+          <div>
+            <h1>Browse available cars</h1>
+            <p>Explore verified listings from trusted sellers and dealerships across Ireland.</p>
+          </div>
+          <form class="search-bar" role="search">
+            <input
+              id="searchInput"
+              data-search
+              type="search"
+              placeholder="Search by make, model, or body type"
+              aria-label="Search cars"
+            />
+            <button class="btn primary" type="submit">Search</button>
+          </form>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="market-grid" data-cards>
+            <article class="car-card" data-name="Volkswagen Golf hatchback">
+              <img
+                src="https://source.unsplash.com/featured/640x420?volkswagen,car"
+                alt="Volkswagen Golf"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer certified</span>
+                <span class="pill">Hatchback</span>
+              </div>
+              <h3>2022 Volkswagen Golf</h3>
+              <p>Efficient city ride with premium infotainment.</p>
+              <div class="price">€24,400</div>
+            </article>
+            <article class="car-card" data-name="Mercedes C-Class sedan">
+              <img
+                src="https://source.unsplash.com/featured/640x420?mercedes,sedan"
+                alt="Mercedes C-Class"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">Luxury</span>
+              </div>
+              <h3>2021 Mercedes C-Class</h3>
+              <p>Luxury interior, driver assist, and service plan.</p>
+              <div class="price">€39,990</div>
+            </article>
+            <article class="car-card" data-name="Ford Ranger pickup">
+              <img
+                src="https://source.unsplash.com/featured/640x420?pickup,truck"
+                alt="Ford Ranger"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Pickup</span>
+              </div>
+              <h3>2020 Ford Ranger</h3>
+              <p>Work-ready with upgraded suspension and cover.</p>
+              <div class="price">€29,750</div>
+            </article>
+            <article class="car-card" data-name="Hyundai Kona electric suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?hyundai,suv"
+                alt="Hyundai Kona"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">EV range 460km</span>
+                <span class="pill">SUV</span>
+              </div>
+              <h3>2022 Hyundai Kona Electric</h3>
+              <p>Zero-emissions SUV with fast charging.</p>
+              <div class="price">€34,200</div>
+            </article>
+            <article class="car-card" data-name="Kia Sorento family suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?kia,suv"
+                alt="Kia Sorento"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer certified</span>
+                <span class="pill">7-seater</span>
+              </div>
+              <h3>2021 Kia Sorento</h3>
+              <p>Spacious cabin with adaptive cruise control.</p>
+              <div class="price">€36,800</div>
+            </article>
+            <article class="car-card" data-name="Mazda MX-5 convertible">
+              <img
+                src="https://source.unsplash.com/featured/640x420?convertible,car"
+                alt="Mazda MX-5"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Convertible</span>
+              </div>
+              <h3>2019 Mazda MX-5</h3>
+              <p>Top-down driving with a sporty manual.</p>
+              <div class="price">€25,500</div>
+            </article>
+            <article class="car-card" data-name="Nissan Leaf electric hatchback">
+              <img
+                src="https://source.unsplash.com/featured/640x420?nissan,car"
+                alt="Nissan Leaf"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">EV</span>
+                <span class="pill">Hatchback</span>
+              </div>
+              <h3>2020 Nissan Leaf</h3>
+              <p>Ideal commuter EV with upgraded battery pack.</p>
+              <div class="price">€21,900</div>
+            </article>
+            <article class="car-card" data-name="Volvo XC60 safety suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?volvo,suv"
+                alt="Volvo XC60"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">Safety+</span>
+              </div>
+              <h3>2022 Volvo XC60</h3>
+              <p>Premium safety suite with mild-hybrid power.</p>
+              <div class="price">€47,300</div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>trustedcars.ie</strong>
+          <p>Find verified cars and trusted sellers in one place.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="list.html">List your car</a>
+          <a href="index.html#dealers">Dealer tools</a>
+        </div>
+        <a class="btn primary" href="list.html">Start selling</a>
+      </footer>
+    </div>
+
+    <div class="assistant" data-assistant>
+      <button class="assistant-toggle" type="button">Ask AI</button>
+      <div class="assistant-panel">
+        <div class="assistant-header">
+          <span>trustedcars.ie Assistant</span>
+          <button class="assistant-close" type="button">×</button>
+        </div>
+        <div class="assistant-messages" data-messages>
+          <p class="assistant-message bot">Need help comparing listings?</p>
+        </div>
+        <form class="assistant-input" data-assistant-form>
+          <input type="text" placeholder="Ask about availability or pricing" />
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>trustedcars.ie | Buy & Sell Cars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <nav class="nav">
+          <a class="logo" href="index.html">
+            <span class="logo-mark">TC</span>
+            <span class="logo-text">trustedcars.ie</span>
+          </a>
+          <div class="nav-links">
+            <a href="browse.html">Browse inventory</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#dealers">Dealers</a>
+            <a href="#financing">Financing</a>
+          </div>
+          <button class="btn ghost" type="button">Sign in</button>
+        </nav>
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="tag">Trusted marketplace for individuals & dealers</span>
+            <h1>Find your next car with confidence.</h1>
+            <p>
+              trustedcars.ie connects private sellers and dealership inventory with verified listings,
+              transparent pricing, and built-in financing support.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="list.html">List your car</a>
+              <a class="btn secondary" href="browse.html">Browse inventory</a>
+            </div>
+            <form class="search-bar" role="search">
+              <input
+                id="searchInput"
+                data-search
+                type="search"
+                placeholder="Search make, model, or body type"
+                aria-label="Search cars"
+              />
+              <button class="btn primary" type="submit">Search</button>
+            </form>
+            <div class="hero-stats">
+              <div class="market-meta">
+                <strong>58k+</strong>
+                <span>active listings</span>
+              </div>
+              <div class="market-meta">
+                <strong>1.4k</strong>
+                <span>dealer partners</span>
+              </div>
+              <div class="market-meta">
+                <strong>4.9★</strong>
+                <span>avg. rating</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="card-header">
+              <h3>Live price insights</h3>
+              <p>Stay ahead with market data.</p>
+            </div>
+            <div class="price-gauge">
+              <span>Estimated value</span>
+              <strong id="valueGauge">€28,400</strong>
+            </div>
+            <ul class="card-list">
+              <li>Instant VIN lookup</li>
+              <li>Vehicle history reports</li>
+              <li>Smart dealer matching</li>
+            </ul>
+            <button class="btn primary full" type="button">Get instant offer</button>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section class="section" id="marketplace">
+          <div class="section-heading">
+            <h2>Popular right now</h2>
+            <p>Hand-picked listings across Ireland, updated daily.</p>
+          </div>
+          <div class="market-grid" data-cards>
+            <article class="car-card" data-name="Tesla Model 3 electric sedan">
+              <img
+                src="https://source.unsplash.com/featured/640x420?tesla,car"
+                alt="Tesla Model 3"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Verified</span>
+              </div>
+              <h3>2021 Tesla Model 3</h3>
+              <p>Low mileage, full history, home charging included.</p>
+              <div class="price">€33,950</div>
+            </article>
+            <article class="car-card" data-name="BMW X5 luxury suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?bmw,suv"
+                alt="BMW X5"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">Certified</span>
+              </div>
+              <h3>2022 BMW X5</h3>
+              <p>Premium packages, warranty, dealer maintained.</p>
+              <div class="price">€51,600</div>
+            </article>
+            <article class="car-card" data-name="Toyota RAV4 family suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?toyota,suv"
+                alt="Toyota RAV4"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Price drop</span>
+              </div>
+              <h3>2020 Toyota RAV4</h3>
+              <p>Family-ready SUV with a spotless service record.</p>
+              <div class="price">€27,850</div>
+            </article>
+            <article class="car-card" data-name="Audi A4 sport sedan">
+              <img
+                src="https://source.unsplash.com/featured/640x420?audi,sedan"
+                alt="Audi A4"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">New arrival</span>
+              </div>
+              <h3>2023 Audi A4</h3>
+              <p>Sport trim, upgraded tech, and showroom condition.</p>
+              <div class="price">€42,990</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section steps" id="how-it-works">
+          <div class="section-heading">
+            <h2>How it works</h2>
+            <p>Secure and seamless for sellers and buyers alike.</p>
+          </div>
+          <div class="steps-grid">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <h3>Create your listing</h3>
+              <p>Upload photos, VIN details, and availability in minutes.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <h3>Get verified</h3>
+              <p>We run background checks and vehicle history reports.</p>
+            </div>
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <h3>Close the deal</h3>
+              <p>Use secure payments, title transfers, and delivery options.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section dealer" id="dealers">
+          <div class="dealer-content">
+            <h2>Tools for dealership growth</h2>
+            <p>
+              Integrations, lead routing, and dynamic pricing dashboards built for multi-lot inventory and
+              sales teams.
+            </p>
+            <ul>
+              <li>Sync inventory across platforms</li>
+              <li>AI-driven lead prioritization</li>
+              <li>Custom dealer storefronts</li>
+            </ul>
+            <button class="btn secondary" type="button">Schedule a demo</button>
+          </div>
+          <div class="dealer-panel">
+            <h3>Dealer command center</h3>
+            <div class="panel-row">
+              <div>
+                <span class="panel-label">Leads today</span>
+                <strong id="leadCount">128</strong>
+              </div>
+              <div>
+                <span class="panel-label">Response rate</span>
+                <strong>92%</strong>
+              </div>
+            </div>
+            <div class="panel-graph">
+              <span>Demand trending up</span>
+              <div class="graph-bars">
+                <div style="height: 48%"></div>
+                <div style="height: 62%"></div>
+                <div style="height: 75%"></div>
+                <div style="height: 54%"></div>
+                <div style="height: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section financing" id="financing">
+          <div class="section-heading">
+            <h2>Financing built for everyone</h2>
+            <p>Instant approvals, transparent terms, and flexible monthly payments.</p>
+          </div>
+          <div class="financing-grid">
+            <div class="finance-card">
+              <h3>Check your rate</h3>
+              <p>Soft credit check with no impact to your score.</p>
+              <button class="btn ghost" type="button">Start pre-approval</button>
+            </div>
+            <div class="finance-card">
+              <h3>Dealer-ready offers</h3>
+              <p>Bring a ready-to-go offer to the dealership or seller.</p>
+              <button class="btn ghost" type="button">Generate offer</button>
+            </div>
+            <div class="finance-card">
+              <h3>Trade-in value</h3>
+              <p>Swap your current car and apply the credit instantly.</p>
+              <button class="btn ghost" type="button">Get trade-in</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>trustedcars.ie</strong>
+          <p>Modern car commerce for individuals and dealers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="browse.html">Marketplace</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#dealers">Dealer tools</a>
+          <a href="#financing">Financing</a>
+        </div>
+        <a class="btn primary" href="list.html">Get started</a>
+      </footer>
+    </div>
+
+    <div class="assistant" data-assistant>
+      <button class="assistant-toggle" type="button">Ask AI</button>
+      <div class="assistant-panel">
+        <div class="assistant-header">
+          <span>trustedcars.ie Assistant</span>
+          <button class="assistant-close" type="button">×</button>
+        </div>
+        <div class="assistant-messages" data-messages>
+          <p class="assistant-message bot">Hi! Need help finding a car or listing yours?</p>
+        </div>
+        <form class="assistant-input" data-assistant-form>
+          <input type="text" placeholder="Ask about pricing, trade-ins, or availability" />
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

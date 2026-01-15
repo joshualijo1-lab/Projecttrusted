@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>List your car | trustedcars.ie</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header compact">
+        <nav class="nav">
+          <a class="logo" href="index.html">
+            <span class="logo-mark">TC</span>
+            <span class="logo-text">trustedcars.ie</span>
+          </a>
+          <div class="nav-links">
+            <a href="browse.html">Browse inventory</a>
+            <a href="list.html">List your car</a>
+            <a href="index.html#dealers">Dealers</a>
+            <a href="index.html#financing">Financing</a>
+          </div>
+          <button class="btn ghost" type="button">Sign in</button>
+        </nav>
+        <div class="page-hero">
+          <div>
+            <h1>List your car in minutes</h1>
+            <p>Reach private buyers and dealers with verified listings and instant offers.</p>
+          </div>
+          <a class="btn primary" href="browse.html">See live listings</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="form-layout">
+            <div>
+              <h2>Tell us about your vehicle</h2>
+              <p>
+                Provide a few details and our trustedcars.ie team will guide you through valuation,
+                verification, and delivery.
+              </p>
+              <div class="info-cards">
+                <div class="info-card">
+                  <h3>Instant valuation</h3>
+                  <p>Get a market-based price range in seconds.</p>
+                </div>
+                <div class="info-card">
+                  <h3>Verified buyers</h3>
+                  <p>We pre-screen buyers and dealerships.</p>
+                </div>
+                <div class="info-card">
+                  <h3>Concierge support</h3>
+                  <p>We help with inspections, paperwork, and logistics.</p>
+                </div>
+              </div>
+            </div>
+            <form class="listing-form">
+              <div class="form-grid">
+                <label>
+                  Full name
+                  <input type="text" placeholder="Jane Doe" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" placeholder="you@email.com" required />
+                </label>
+                <label>
+                  Vehicle make
+                  <input type="text" placeholder="Volkswagen" required />
+                </label>
+                <label>
+                  Model
+                  <input type="text" placeholder="Golf" required />
+                </label>
+                <label>
+                  Year
+                  <input type="number" placeholder="2022" min="1995" max="2025" required />
+                </label>
+                <label>
+                  Mileage
+                  <input type="text" placeholder="48,000 km" required />
+                </label>
+                <label>
+                  Location
+                  <input type="text" placeholder="Dublin" required />
+                </label>
+                <label>
+                  Asking price
+                  <input type="text" placeholder="€24,000" />
+                </label>
+                <label class="full">
+                  Notes
+                  <textarea rows="4" placeholder="Share service history, upgrades, or highlights"></textarea>
+                </label>
+              </div>
+              <button class="btn primary full" type="submit">Submit listing request</button>
+              <p class="form-footnote">Our team replies within 24 hours with next steps.</p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>trustedcars.ie</strong>
+          <p>Your trusted partner for selling cars across Ireland.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="browse.html">Browse inventory</a>
+          <a href="index.html#dealers">Dealer tools</a>
+        </div>
+        <a class="btn primary" href="browse.html">Browse inventory</a>
+      </footer>
+    </div>
+
+    <div class="assistant" data-assistant>
+      <button class="assistant-toggle" type="button">Ask AI</button>
+      <div class="assistant-panel">
+        <div class="assistant-header">
+          <span>trustedcars.ie Assistant</span>
+          <button class="assistant-close" type="button">×</button>
+        </div>
+        <div class="assistant-messages" data-messages>
+          <p class="assistant-message bot">Need help pricing your car?</p>
+        </div>
+        <form class="assistant-input" data-assistant-form>
+          <input type="text" placeholder="Ask about valuation, photos, or pricing" />
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>trustedcars.ie | Buy & Sell Cars</title>
 
     <title>Projecttrusted | Buy & Sell Cars</title>
     <link rel="stylesheet" href="styles.css" />
@@ -12,6 +13,12 @@
     <div class="page">
       <header class="site-header">
         <nav class="nav">
+          <a class="logo" href="index.html">
+            <span class="logo-mark">TC</span>
+            <span class="logo-text">trustedcars.ie</span>
+          </a>
+          <div class="nav-links">
+            <a href="browse.html">Browse inventory</a>
           <div class="logo">
             <span class="logo-mark">PT</span>
             <span class="logo-text">Projecttrusted</span>
@@ -27,6 +34,35 @@
         <section class="hero">
           <div class="hero-copy">
             <span class="tag">Trusted marketplace for individuals & dealers</span>
+            <h1>Find your next car with confidence.</h1>
+            <p>
+              trustedcars.ie connects private sellers and dealership inventory with verified listings,
+              transparent pricing, and built-in financing support.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="list.html">List your car</a>
+              <a class="btn secondary" href="browse.html">Browse inventory</a>
+            </div>
+            <form class="search-bar" role="search">
+              <input
+                id="searchInput"
+                data-search
+                type="search"
+                placeholder="Search make, model, or body type"
+                aria-label="Search cars"
+              />
+              <button class="btn primary" type="submit">Search</button>
+            </form>
+            <div class="hero-stats">
+              <div class="market-meta">
+                <strong>58k+</strong>
+                <span>active listings</span>
+              </div>
+              <div class="market-meta">
+                <strong>1.4k</strong>
+                <span>dealer partners</span>
+              </div>
+              <div class="market-meta">
             <h1>Buy and sell cars with confidence.</h1>
             <p>
               A modern platform built for private sellers and dealership inventory, complete with instant
@@ -58,6 +94,7 @@
             </div>
             <div class="price-gauge">
               <span>Estimated value</span>
+              <strong id="valueGauge">€28,400</strong>
               <strong id="valueGauge">$28,400</strong>
             </div>
             <ul class="card-list">
@@ -73,6 +110,16 @@
       <main>
         <section class="section" id="marketplace">
           <div class="section-heading">
+            <h2>Popular right now</h2>
+            <p>Hand-picked listings across Ireland, updated daily.</p>
+          </div>
+          <div class="market-grid" data-cards>
+            <article class="car-card" data-name="Tesla Model 3 electric sedan">
+              <img
+                src="https://source.unsplash.com/featured/640x420?tesla,car"
+                alt="Tesla Model 3"
+                loading="lazy"
+              />
             <h2>Explore the marketplace</h2>
             <p>Find the right car or the right buyer in minutes.</p>
           </div>
@@ -84,6 +131,14 @@
               </div>
               <h3>2021 Tesla Model 3</h3>
               <p>Low mileage, full history, home charging included.</p>
+              <div class="price">€33,950</div>
+            </article>
+            <article class="car-card" data-name="BMW X5 luxury suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?bmw,suv"
+                alt="BMW X5"
+                loading="lazy"
+              />
               <div class="price">$33,950</div>
             </article>
             <article class="market-card">
@@ -93,6 +148,35 @@
               </div>
               <h3>2022 BMW X5</h3>
               <p>Premium packages, warranty, dealer maintained.</p>
+              <div class="price">€51,600</div>
+            </article>
+            <article class="car-card" data-name="Toyota RAV4 family suv">
+              <img
+                src="https://source.unsplash.com/featured/640x420?toyota,suv"
+                alt="Toyota RAV4"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Individual seller</span>
+                <span class="pill">Price drop</span>
+              </div>
+              <h3>2020 Toyota RAV4</h3>
+              <p>Family-ready SUV with a spotless service record.</p>
+              <div class="price">€27,850</div>
+            </article>
+            <article class="car-card" data-name="Audi A4 sport sedan">
+              <img
+                src="https://source.unsplash.com/featured/640x420?audi,sedan"
+                alt="Audi A4"
+                loading="lazy"
+              />
+              <div class="market-meta">
+                <span class="pill">Dealer highlight</span>
+                <span class="pill">New arrival</span>
+              </div>
+              <h3>2023 Audi A4</h3>
+              <p>Sport trim, upgraded tech, and showroom condition.</p>
+              <div class="price">€42,990</div>
               <div class="price">$51,600</div>
             </article>
             <article class="market-card">
@@ -197,6 +281,11 @@
 
       <footer class="footer">
         <div>
+          <strong>trustedcars.ie</strong>
+          <p>Modern car commerce for individuals and dealers.</p>
+        </div>
+        <div class="footer-links">
+          <a href="browse.html">Marketplace</a>
           <strong>Projecttrusted</strong>
           <p>Modern car commerce for individuals and dealers.</p>
         </div>
@@ -206,6 +295,26 @@
           <a href="#dealers">Dealer tools</a>
           <a href="#financing">Financing</a>
         </div>
+        <a class="btn primary" href="list.html">Get started</a>
+      </footer>
+    </div>
+
+    <div class="assistant" data-assistant>
+      <button class="assistant-toggle" type="button">Ask AI</button>
+      <div class="assistant-panel">
+        <div class="assistant-header">
+          <span>trustedcars.ie Assistant</span>
+          <button class="assistant-close" type="button">×</button>
+        </div>
+        <div class="assistant-messages" data-messages>
+          <p class="assistant-message bot">Hi! Need help finding a car or listing yours?</p>
+        </div>
+        <form class="assistant-input" data-assistant-form>
+          <input type="text" placeholder="Ask about pricing, trade-ins, or availability" />
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
         <button class="btn primary" type="button">Get started</button>
       </footer>
     </div>

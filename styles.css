@@ -9,6 +9,15 @@
   --text: #101828;
   --muted: #667085;
   --border: #e4e7ec;
+  --bg: #0b0f1a;
+  --surface: #121826;
+  --surface-light: #182033;
+  --primary: #5b8cff;
+  --primary-dark: #3d5fc6;
+  --accent: #7cf2c2;
+  --text: #f8f9ff;
+  --muted: #b5bdd7;
+  --border: rgba(255, 255, 255, 0.12);
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
 }
 
@@ -20,6 +29,7 @@
 
 body {
   background: var(--bg);
+  background: radial-gradient(circle at top, #1f2b49 0%, #0b0f1a 50%, #090c14 100%);
   color: var(--text);
   min-height: 100vh;
 }
@@ -50,6 +60,9 @@ img {
 
 .site-header.compact {
   padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 10, 20, 0.75);
+  backdrop-filter: blur(14px);
 }
 
 .nav {
@@ -69,6 +82,7 @@ img {
 .logo-mark {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
+  color: #0b0f1a;
   font-weight: 700;
   padding: 0.4rem 0.6rem;
   border-radius: 12px;
@@ -76,6 +90,7 @@ img {
 }
 
 .logo-text {
+  font-weight: 600;
   letter-spacing: 0.4px;
 }
 
@@ -88,6 +103,7 @@ img {
 
 .nav-links a:hover {
   color: var(--primary);
+  color: var(--text);
 }
 
 .btn {
@@ -107,6 +123,7 @@ img {
 .btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 24px rgba(16, 24, 40, 0.12);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .btn.primary {
@@ -122,6 +139,7 @@ img {
 
 .btn.ghost {
   background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text);
   border: 1px solid var(--border);
 }
@@ -134,6 +152,7 @@ img {
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 3rem;
   align-items: center;
 }
@@ -157,6 +176,8 @@ img {
   border-radius: 999px;
   background: rgba(37, 81, 241, 0.1);
   color: var(--primary);
+  background: rgba(124, 242, 194, 0.14);
+  color: var(--accent);
 }
 
 .hero-actions {
@@ -189,6 +210,9 @@ img {
   outline: none;
 }
 
+  margin-bottom: 2rem;
+}
+
 .hero-stats {
   display: flex;
   gap: 2rem;
@@ -209,6 +233,7 @@ img {
   border-radius: 24px;
   border: 1px solid var(--border);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
 
 .card-header h3 {
@@ -225,6 +250,7 @@ img {
   padding: 1.2rem;
   border-radius: 16px;
   background: var(--surface-alt);
+  background: rgba(91, 140, 255, 0.12);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -284,6 +310,13 @@ img {
 
 .car-card p {
   color: var(--muted);
+.market-card {
+  background: var(--surface-light);
+  padding: 1.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 0.8rem;
 }
 
 .market-meta {
@@ -297,6 +330,7 @@ img {
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
   background: #f2f4f7;
+  background: rgba(255, 255, 255, 0.08);
   color: var(--muted);
 }
 
@@ -307,6 +341,7 @@ img {
 
 .steps {
   background: #f7f9ff;
+  background: #0d1324;
 }
 
 .steps-grid {
@@ -320,6 +355,7 @@ img {
   padding: 1.6rem;
   border-radius: 18px;
   background: var(--surface);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .step-number {
@@ -351,6 +387,7 @@ img {
 
 .dealer-panel {
   background: linear-gradient(160deg, rgba(37, 81, 241, 0.1), rgba(18, 183, 106, 0.08));
+  background: linear-gradient(160deg, rgba(91, 140, 255, 0.15), rgba(124, 242, 194, 0.08));
   border-radius: 22px;
   padding: 2rem;
   border: 1px solid var(--border);
@@ -395,6 +432,7 @@ img {
 
 .finance-card {
   background: var(--surface);
+  background: var(--surface-light);
   padding: 1.8rem;
   border-radius: 18px;
   border: 1px solid var(--border);
@@ -487,6 +525,7 @@ img {
   align-items: center;
   justify-content: space-between;
   background: #fff;
+  background: rgba(7, 10, 20, 0.9);
 }
 
 .footer p {
@@ -591,6 +630,7 @@ img {
 }
 
 @media (max-width: 900px) {
+@media (max-width: 720px) {
   .nav-links {
     display: none;
   }

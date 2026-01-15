@@ -11,6 +11,9 @@ const updateStats = () => {
     const formatted = values[index].toLocaleString("en-IE", {
       style: "currency",
       currency: "EUR",
+    const formatted = values[index].toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
       maximumFractionDigits: 0,
     });
     valueGauge.textContent = formatted;
@@ -104,3 +107,5 @@ updateStats();
 setInterval(updateStats, 3200);
 initSearch();
 initAssistant();
+updateStats();
+setInterval(updateStats, 3200);
